@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:vm="clr-namespace:xx.ViewModels"
+             xmlns:models="clr-namespace:xx.Models"
+             x:Class="xx.Pages.DetailPage"
+             Title=""
+             Shell.NavBarIsVisible="False"
+             x:DataType="vm:DetailsViewModel">
+    <ContentPage.Behaviors>
+
+        <toolkit:StatusBarBehavior StatusBarColor="White"
+                                   StatusBarStyle="DarkContent"
+/>
+    </ContentPage.Behaviors>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="QuantityBtn" TargetType="ImageButton">
+                <Setter Property="HeightRequest" Value="40"/>
+                                <Setter Property="WidthRequest" Value="40"/>
+                 <Setter Property="VerticalOptions" Value="Center"/>
+                 <Setter Property="Padding" Value="0"/>
+            </Style>
+
+        </ResourceDictionary>
+
+    </ContentPage.Resources>
+   <Grid>
+        <ScrollView Padding="15"
+                    >
+           <VerticalStackLayout Spacing="15">
+                <Image Source="{Binding Drinks.Image}"
+                       HeightRequest="200"
+                       WidthRequest="200"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center"/>
+<Label Text="{Binding Drinks.Name}"
+       FontSize="20"
+       FontAttributes="Bold"
+       HorizontalOptions="Center"/>
+                 <Grid ColumnDefinitions="*,*">
+                                              <Label Grid.Column="0"
+                                           Text="{Binding Drinks.Price,StringFormat='{0} тг '}"
+                                                     FontAttributes="Bold"
+                                                     FontSize="18"
+                                                     />
+                                            <HorizontalStackLayout Grid.Column="1"
+                                                           HorizontalOptions="End"
+                                                           VerticalOptions="Center"
+                                                           Spacing="2">
+                                        <Label Text=" 10"/>
+                                        <Image
+                                                    Source="star"
+                                               HeightRequest="15"
+                                               WidthRequest="15">
+                                            <Image.Behaviors>
+                                                <toolkit:IconTintColorBehavior
+                                                    TintColor="DarkGoldenrod"/>
+
+
+                                            </Image.Behaviors>
+                                            </Image>
+
+                                    </HorizontalStackLayout>
+                                            </Grid>
+                
+             
+                <Label FontSize="14"
+                       FontAttributes="Bold"
+                       Text="{Binding Drinks.Calories,StringFormat=' Калорий: {0}/100гр'}"/>
+
+
+                <Label Text="ОПИСАНИЕ"
+                       TextDecorations="Underline"
+                       FontSize="15"
+                       FontAttributes="Bold"
+                       Margin="0,5"
+                       />
+                <Label FontSize="14"
+                       LineHeight="1.5"
+                       Text="{Binding Drinks.Description}"/>
+
+
+            </VerticalStackLayout>
+
+
+        </ScrollView>
+        <Border StrokeThickness="0"
+                x:Name="bottomBox"
+                BackgroundColor="DarkBlue"
+                Margin="-1"
+                VerticalOptions="End"
+                HeightRequest="150"
+                Padding="15"
+                StrokeShape="RoundRectangle 30,30,0,0"
+                >
+            <Border.Shadow>
+                <Shadow Brush="blue"
+                        Radius="50"/>
+
+
+            </Border.Shadow>
+            <Grid RowDefinitions="Auto,Auto"
+                  ColumnDefinitions="*,*">
+                <Label Grid.Row="0"
+                       Grid.Column="0"
+                       Text="{Binding Drinks.Amount,
+                       StringFormat= '{0}тг'}"
+                       FontSize="20"
+                       TextColor="White"
+                       FontAttributes="Bold"
+                       VerticalOptions="Center"
+                       Padding="2"
+                       />
+                <Grid Grid.Row="0"
+                      Grid.Column="1"
+                      ColumnDefinitions="50,40,50"
+                      HorizontalOptions="End"
+                      VerticalOptions="Center">
+                    <ImageButton Grid.Column="0"
+                                 Source="minus"
+                                Style="{StaticResource QuantityBtn}"
+                                Command="{Binding RemoveFromCartCommand }" >
+
+                        <ImageButton.Behaviors>
+                            <toolkit:IconTintColorBehavior TintColor="LightBlue"/>
+
+
+                        </ImageButton.Behaviors>
+
+                    </ImageButton>
+                    <Label Grid.Column="1"
+                           Text="{Binding Drinks.CartQuantity}"
+                           TextColor="White"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                           FontSize="25"
+                           />
+
+
+                      <ImageButton Grid.Column="2"
+                                 Source="pluss"
+                                Style="{StaticResource QuantityBtn}"
+                                                                Command="{Binding AddToCartCommand }" >
+
+                                 
+
+                        <ImageButton.Behaviors>
+                            <toolkit:IconTintColorBehavior TintColor="LightBlue"/>
+
+
+                        </ImageButton.Behaviors>
+
+                    </ImageButton>
+
+
+                    
+
+                </Grid>
+                <Button Grid.Row="1"
+                        Grid.ColumnSpan="2"
+                        Text="Посмотреть корзину"
+                        BackgroundColor="blue"
+                        HorizontalOptions="Center"
+                        CornerRadius="22"
+                        Padding="80,10"
+                        VerticalOptions="End"
+                        Margin="0,20"
+                        Command="{Binding ViewCartCommand}"
+                        />
+
+            </Grid>
+
+            </Border>
+        <ImageButton Source="right_arrow"
+                     VerticalOptions="Start"
+                     HorizontalOptions="Start"
+                     Margin="15"
+                     RotationY="180"
+                                          HeightRequest="30"
+                                          WidthRequest="30"
+                                          Clicked="ImageButton_Clicked"
+
+                     >
+            <ImageButton.Behaviors>
+                <toolkit:IconTintColorBehavior TintColor="DarkBlue"/>
+
+            </ImageButton.Behaviors>
+
+        </ImageButton>
+
+    </Grid>
+</ContentPage>

@@ -1,0 +1,71 @@
+﻿<Properties StartupConfiguration="{0E738837-04F3-44F6-8947-0B0FA717F12E}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="xx/Services/DrinkService.cs">
+    <Files>
+      <File FileName="xx/AppShell.xaml.cs" Line="9" Column="72" />
+      <File FileName="xx/ViewModels/HomeViewModel.cs" Line="41" Column="1" />
+      <File FileName="xx/Pages/HomePage.xaml.cs" Line="23" Column="1" />
+      <File FileName="xx/Pages/AllDrinkPage.xaml" Line="111" Column="50" />
+      <File FileName="xx/Pages/DetailPage.xaml" Line="2" Column="1" />
+      <File FileName="xx/ViewModels/DetailsViewModel.cs" Line="49" Column="1" />
+      <File FileName="xx/ViewModels/AllDrinkViewModel.cs" Line="45" Column="10" />
+      <File FileName="xx/Pages/HomePage.xaml" Line="26" Column="39" />
+      <File FileName="xx/Platforms/iOS/Program.cs" Line="14" Column="1" />
+      <File FileName="xx/Pages/DetailPage.xaml.cs" Line="3" Column="1" />
+      <File FileName="xx/MauiProgram.cs" Line="45" Column="1" />
+      <File FileName="xx/GlobalUsings.cs" Line="10" Column="40" />
+      <File FileName="xx/AppShell.xaml" Line="9" Column="1" />
+      <File FileName="xx/App.xaml" Line="1" Column="1" />
+      <File FileName="xx/Services/DrinkService.cs" Line="84" Column="4" />
+      <File FileName="xx/Models/Drinks.cs" Line="8" Column="35" />
+      <File FileName="xx/Pages/CartPage.xaml" Line="9" Column="41" />
+      <File FileName="xx/ViewModels/CartViewModel.cs" Line="26" Column="14" />
+      <File FileName="xx/Pages/CartPage.xaml.cs" Line="15" Column="1" />
+      <File FileName="xx/Pages/CheckoutPage.xaml" Line="10" Column="31" />
+      <File FileName="xx/Pages/CheckoutPage.xaml.cs" Line="14" Column="1" />
+      <File FileName="xx/Platforms/Android/AndroidManifest.xml" />
+      <File FileName="xx/Pages/MainPage.xaml" Line="17" Column="10" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="xx" expanded="True">
+            <Node name="xx" expanded="True">
+              <Node name="Dependencies" expanded="True" />
+              <Node name="Pages" expanded="True">
+                <Node name="AllDrinkPage.xaml" expanded="True" />
+                <Node name="CartPage.xaml" expanded="True" />
+                <Node name="CheckoutPage.xaml" expanded="True" />
+                <Node name="DetailPage.xaml" expanded="True" />
+                <Node name="HomePage.xaml" expanded="True" />
+                <Node name="MainPage.xaml" expanded="True" />
+              </Node>
+              <Node name="Platforms" expanded="True">
+                <Node name="Android" expanded="True" />
+                <Node name="iOS" expanded="True" />
+              </Node>
+              <Node name="Resources" expanded="True">
+                <Node name="Images" expanded="True" />
+              </Node>
+              <Node name="Services" expanded="True">
+                <Node name="DrinkService.cs" selected="True" />
+              </Node>
+              <Node name="ViewModels" expanded="True" />
+              <Node name="AppShell.xaml" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <Xamarin.Addins.Core.Project ActiveDebugTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.AE393CA0-A468-464F-8455-59F4600DD841" />
+  <MonoDevelop.Ide.ItemProperties.xx PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.AE393CA0-A468-464F-8455-59F4600DD841" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+</Properties>

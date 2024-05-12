@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="xx.Pages.MainPage"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="DarkGreen">
+    <Grid RowDefinitions="Auto,*,Auto"
+          Padding="15,25">
+          <Label Grid.Row="0"
+                 Text="Tez food"
+                 FontSize="50"
+                 HorizontalOptions="Center"
+                 FontAttributes="Bold"
+                 />
+    <Image Grid.Row="1"
+           Source="salad.png"
+           HeightRequest="250"
+           WidthRequest="250 "
+           VerticalOptions="Center"
+           HorizontalOptions="Center"
+           />
+        <VerticalStackLayout Grid.Row="2"
+                             Spacing="10">
+            <Label Text=" Закажи продукты!"
+                   FontSize="40"
+                   FontAttributes="Bold"
+                   />
+            <Label Text="Начни сейчас и не парься в будущем "
+                   FontSize="20"
+                   LineHeight="1.2"
+                   TextColor="white"
+/>
+            <Border StrokeShape="RoundRectangle 25"
+                    StrokeThickness="0"
+                     BackgroundColor="LightGreen"
+                     HeightRequest="50">
+
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+
+                </Border.GestureRecognizers>
+                <HorizontalStackLayout
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Spacing="10"
+                    Padding="0, 5"
+                    >
+                    <Label Text="   Начать"
+                             VerticalOptions="Center"
+
+                            FontSize="18"/>
+                    <Image Source="right_arrow"
+
+                           VerticalOptions="Center"
+                           HeightRequest="30"/>
+                </HorizontalStackLayout>
+
+            </Border>
+
+        </VerticalStackLayout>
+                   
+  </Grid>
+
+</ContentPage>

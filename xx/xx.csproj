@@ -1,0 +1,141 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net7.0-android;net7.0-ios;</TargetFrameworks>
+		
+		<OutputType>Exe</OutputType>
+		<RootNamespace>xx</RootNamespace>
+		<UseMaui>true</UseMaui>
+		<SingleProject>true</SingleProject>
+		<ImplicitUsings>enable</ImplicitUsings>
+
+		<!-- Display name -->
+		<ApplicationTitle>xx</ApplicationTitle>
+
+		<!-- App Identifier -->
+		<ApplicationId>com.companyname.xx</ApplicationId>
+		<ApplicationIdGuid>fb1eb40d-c3a5-4c75-ab56-056f4801f865</ApplicationIdGuid>
+
+		<!-- Versions -->
+		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+		<ApplicationVersion>1</ApplicationVersion>
+
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">11.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-ios|AnyCPU'">
+	  <CreatePackage>false</CreatePackage>
+	</PropertyGroup>
+	<ItemGroup>
+	  <MauiImage Remove="Resources\Images\right-arrow.png" />
+	  <MauiImage Remove="Resources\Images\star.png" />
+	</ItemGroup>
+	<ItemGroup>
+		<!-- App Icon -->
+		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
+
+		<!-- Splash Screen -->
+		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
+
+		<!-- Images -->
+		<MauiImage Include="Resources\Images\*.svg" />
+		<MauiImage Include="Resources\Images\*.png" />
+
+
+		<MauiImage Update="Resources\Images\dotnet_bot.svg" BaseSize="168,208" />
+
+		<!-- Custom Fonts -->
+		<MauiFont Include="Resources\Fonts\*" />
+
+		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
+		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.1" />
+		<PackageReference Include="CommunityToolkit.Maui" Version="6.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="Resources\Images\picture.svg" />
+	  <None Remove="Resources\9508af756a66db659bea5bca74a528ff.jpeg" />
+	  <None Remove="Resources\Images\salad.png" />
+	  <None Remove="Resources\.DS_Store" />
+	  <None Remove="Models\" />
+	  <None Remove="ViewModels\" />
+	  <None Remove="Resources\Images\right-arrow.png" />
+	  <None Remove="Resources\Images\right_arrow.png" />
+	  <None Remove="Services\" />
+	  <None Remove="Resources\Images\vegtomato.png" />
+	  <None Remove="Pages\" />
+	  <None Remove="Resources\Images\star.png" />
+	  <None Remove="Resources\Images\orange.png" />
+	  <None Remove="Resources\Images\apple.png" />
+	  <None Remove="Resources\Images\burger.png" />
+	  <None Remove="Resources\Images\drink.png" />
+	  <None Remove="Resources\Images\cola.png" />
+	  <None Remove="Resources\Images\water.png" />
+	  <None Remove="Resources\Images\arrow.png" />
+	  <None Remove="Resources\Images\free-icon-left-9121686.png" />
+	  <None Remove="Resources\Images\minus.png" />
+	  <None Remove="Resources\Images\plus.png" />
+	  <None Remove="Resources\Images\pluss.png" />
+	  <None Remove="Resources\Images\trash.png" />
+	  <None Remove="Resources\Images\checked.png" />
+	  <None Remove="Resources\Images\banabas.png" />
+	  <None Remove="Resources\Images\dragon.png" />
+	  <None Remove="Resources\Images\strawberry.png" />
+	  <None Remove="Resources\Images\pepper.png" />
+	  <None Remove="Resources\Images\banana.png" />
+	  <None Remove="Resources\Images\beer.png" />
+	  <None Remove="Resources\Images\orangej.png" />
+	  <None Remove="Resources\Images\avocado.png" />
+	  <None Remove="Resources\Images\corn.png" />
+	  <None Remove="Resources\Images\fish.png" />
+	  <None Remove="Resources\Images\pea.png" />
+	  <None Remove="Resources\Images\saltcuc.png" />
+	</ItemGroup>
+	<ItemGroup>
+	  <BundleResource Include="Resources\Images\picture.svg" />
+	  <BundleResource Include="Resources\9508af756a66db659bea5bca74a528ff.jpeg" />
+	  <BundleResource Include="Resources\Images\salad.png" />
+	  <BundleResource Include="Resources\.DS_Store" />
+	  <BundleResource Include="Resources\Images\right_arrow.png" />
+	  <BundleResource Include="Resources\Images\right_arrow.png" />
+	  <BundleResource Include="Resources\Images\vegtomato.png" />
+	  <BundleResource Include="Resources\Images\star.png" />
+	  <BundleResource Include="Resources\Images\orange.png" />
+	  <BundleResource Include="Resources\Images\apple.png" />
+	  <BundleResource Include="Resources\Images\burger.png" />
+	  <BundleResource Include="Resources\Images\drink.png" />
+	  <BundleResource Include="Resources\Images\cola.png" />
+	  <BundleResource Include="Resources\Images\water.png" />
+	  <BundleResource Include="Resources\Images\arrow.png" />
+	  <BundleResource Include="Resources\Images\left_arrow.png" />
+	  <BundleResource Include="Resources\Images\minus.png" />
+	  <BundleResource Include="Resources\Images\plus.png" />
+	  <BundleResource Include="Resources\Images\pluss.png" />
+	  <BundleResource Include="Resources\Images\trash.png" />
+	  <BundleResource Include="Resources\Images\checked.png" />
+	  <BundleResource Include="Resources\Images\banabas.png" />
+	  <BundleResource Include="Resources\Images\dragon.png" />
+	  <BundleResource Include="Resources\Images\strawberry.png" />
+	  <BundleResource Include="Resources\Images\pepper.png" />
+	  <BundleResource Include="Resources\Images\banana.png" />
+	  <BundleResource Include="Resources\Images\beer.png" />
+	  <BundleResource Include="Resources\Images\orangej.png" />
+	  <BundleResource Include="Resources\Images\avocado.png" />
+	  <BundleResource Include="Resources\Images\corn.png" />
+	  <BundleResource Include="Resources\Images\fish.png" />
+	  <BundleResource Include="Resources\Images\pea.png" />
+	  <BundleResource Include="Resources\Images\saltcuc.png" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Models\" />
+	  <Folder Include="ViewModels\" />
+	  <Folder Include="Services\" />
+	  <Folder Include="Pages\" />
+	</ItemGroup>
+</Project>

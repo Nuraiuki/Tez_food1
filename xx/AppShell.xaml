@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="xx.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages= "clr-namespace:xx.Pages"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.BackgroundColor="DarkGoldenrod">
+
+    <ShellContent
+        Title=""
+        ContentTemplate="{DataTemplate pages:MainPage}"
+        Route="MainPage" />
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate pages:HomePage}"
+        Route="HomePage" />
+
+        <ShellContent
+        Title="AllItem"
+        ContentTemplate="{DataTemplate pages:AllDrinkPage}"
+        Route="AllDrinkPage" />
+</Shell>
+

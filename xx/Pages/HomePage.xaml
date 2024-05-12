@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:vm="clr-namespace:xx.ViewModels"
+             xmlns:models="clr-namespace:xx.Models"
+
+             x:Class="xx.Pages.HomePage"
+             Title="tez food "
+             Padding="15"
+             x:DataType="vm:HomeViewModel"
+             >
+       
+
+<ScrollView>
+        <VerticalStackLayout Spacing="10">
+            <Border StrokeShape="RoundRectangle 10"
+                    StrokeThickness="0"
+                    BackgroundColor="DarkGreen"
+                    VerticalOptions="Start"
+
+                    Padding="15">
+                    <Grid ColumnDefinitions = "* ,150"
+                          RowDefinitions="*,auto">
+                    <VerticalStackLayout Grid.Row="0" Grid.Column="0" Spacing="10">
+                        <Label Text="акция "
+                               FontSize="36"
+                               FontAttributes="Bold"
+                               VerticalOptions="Center" />
+                        <Label Text=" Best price"/>
+                     </VerticalStackLayout>
+                     <Button Grid.Row="1"
+                             Grid.Column="0"
+                             Text="Купить это"
+                             BackgroundColor="White"
+                             TextColor="Black"
+                             CornerRadius="22"
+                             FontAttributes="Bold"
+                             HorizontalOptions="Center"
+
+                             Padding="50, 0"
+                             />
+
+
+
+                     <Image Grid.RowSpan="2"
+                            Grid.Column="1 "
+                            Source="pea"
+                            HeightRequest="150"
+                            WidthRequest="150"/>
+
+                    
+                    </Grid>
+                </Border >
+
+            <BoxView HeightRequest="15"
+                     Color="Transparent"/>
+
+            <Grid ColumnDefinitions="*,*">
+                <Label Grid.Column="0" Text=" Popular "
+                       VerticalOptions="End"
+                       FontSize="20"
+                       FontAttributes="Bold"/>
+       <Label Grid.Column="1" Text="Посмотреть все"
+       VerticalOptions="End"
+       HorizontalOptions="End"
+       TextDecorations="Underline">
+
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding GoToAllDrinksPageCommand}"
+                                              CommandParameter="{x:Boolean false}"/>
+
+
+                    </Label.GestureRecognizers>
+
+</Label>
+
+
+
+            </Grid>
+            <FlexLayout BindableLayout.ItemsSource="{Binding Drinks}"
+                        Wrap="Wrap">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate x:DataType="models:Drinks">
+                        <Border FlexLayout.Basis="50%"
+                            StrokeShape="RoundRectangle 10"
+ Stroke="Black" StrokeThickness="2" BackgroundColor="White"
+                                Padding="8"
+                                Margin="2">
+                            <Grid RowDefinitions="150,auto,auto,auto"
+                                  RowSpacing="5">
+                                  <Image Grid.Row="0"
+                                         HeightRequest="150"
+                                       WidthRequest="130 "
+                                         Source="{Binding Image}"/>
+                                <Label Grid.Row="1"
+                                       Text="{Binding Name}"
+                                       HorizontalOptions="Center"
+                                       FontSize="20"/>
+                                <Grid Grid.Row="2"
+                                      ColumnDefinitions="*,*">
+                                    <Label Grid.Column="0"
+                                           VerticalOptions="Center"
+                                           Text="{Binding Price,StringFormat='{0} тг '}"
+                                           FontAttributes="Bold"/>
+
+                                    <HorizontalStackLayout Grid.Column="1"
+                                                           HorizontalOptions="End"
+                                                           VerticalOptions="Center"
+                                                           Spacing="2">
+                                        <Label Text=" 10"/>
+                                        <Image Source="star"
+                                               HeightRequest="15"
+                                               WidthRequest="15">
+                                            <Image.Behaviors>
+                                                <toolkit:IconTintColorBehavior
+                                                    TintColor="DarkGoldenrod"/>
+
+
+                                            </Image.Behaviors>
+                                            </Image>
+
+                                    </HorizontalStackLayout>
+
+
+                                           
+
+                                </Grid>
+                                <Button Grid.Row="3"
+                                        Text="подробнее"
+                                        BackgroundColor="Gold"
+                                        TextColor="White"
+                                        FontAttributes="Bold"
+                                        VerticalOptions="End"
+                                        HorizontalOptions="Center"
+                                        Padding="25,0"
+                                        Command="{Binding
+                                                                      Source={x:RelativeSource AncestorType={x:Type vm:HomeViewModel}},Path=GoToDetailsPageCommand}"
+                                                                      CommandParameter="{Binding .}"
+
+                                        />
+
+
+
+                                         </Grid>
+                              <Border.GestureRecognizers>
+                                                <TapGestureRecognizer Command="{Binding
+                                                                      Source={x:RelativeSource AncestorType={x:Type vm:HomeViewModel}},Path=GoToDetailsPageCommand}"
+                                                                      CommandParameter="{Binding .}"/>
+
+                                            </Border.GestureRecognizers>
+                        </Border>
+
+                    </DataTemplate>
+
+
+                </BindableLayout.ItemTemplate>
+
+
+            </FlexLayout>
+        </VerticalStackLayout>
+
+    </ScrollView>
+</ContentPage>
